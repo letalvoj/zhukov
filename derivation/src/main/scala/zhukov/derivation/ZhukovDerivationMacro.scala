@@ -1,13 +1,11 @@
 package zhukov.derivation
 
-import macrocompat.bundle
 import zhukov.protobuf.{CodedOutputStream, WireFormat}
 
 import scala.collection.concurrent.TrieMap
 import scala.language.experimental.macros
 import scala.reflect.macros.blackbox
 
-@bundle
 class ZhukovDerivationMacro(val c: blackbox.Context) {
 
   import c.universe._

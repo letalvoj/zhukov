@@ -1,7 +1,7 @@
 import Dependencies._
 import xerial.sbt.Sonatype._
 
-ThisBuild / scalaVersion     := "2.12.8"
+ThisBuild / scalaVersion     := "2.13.5"
 ThisBuild / organization     := "com.github.fomkin"
 
 val unusedRepo = Some(Resolver.file("Unused transient repository", file("target/unusedrepo")))
@@ -53,7 +53,7 @@ lazy val derivation = project
     PB.protoSources in Test := Seq(file("derivation/src/test/protobuf")),
     libraryDependencies := Seq(
       scalaPb % Test, minitest, // testing
-      macroCompat, macroParadise, scalaCompiler(scalaVersion.value) // macros
+      scalaCompiler(scalaVersion.value) // macros
     )
   )
   .dependsOn(core)
